@@ -19,10 +19,10 @@ namespace ShimmysAdminTools.Models
         public bool ExecEnabled = false;
 
 		[XmlArrayItem(elementName: "ID")]
-		public List<ushort> BlacklistedAttachments;
+		public List<ushort> BlacklistedAttachments { get; set;}
 
 		[XmlArrayItem(elementName: "WeaponID")]
-		public List<ushort> BlacklistedWeapons;
+		public List<ushort> BlacklistedWeapons { get; set;}
 		public void LoadDefaults()
         {
             DelayStartEXECUtility = false;

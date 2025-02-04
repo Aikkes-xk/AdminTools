@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{61A58A25-927A-49C7-A4D6-87B573597F45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ShimmysAdminTools</RootNamespace>
+    <AssemblyName>ShimmysAdminTools</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.Unturned.Redist.3.23.3.1\lib\net461\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="com.rlabrecque.steamworks.net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.Unturned.Redist.3.23.3.1\lib\net461\com.rlabrecque.steamworks.net.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rocket.API, Version=4.9.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShimmyMySherbet.RocketExtensions.RocketMod.Redist.4.9.3.5\lib\net48\Rocket.API.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rocket.Core, Version=4.9.3.4, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShimmyMySherbet.RocketExtensions.RocketMod.Redist.4.9.3.5\lib\net48\Rocket.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Rocket.Unturned, Version=4.9.3.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ShimmyMySherbet.RocketExtensions.RocketMod.Redist.4.9.3.5\lib\net48\Rocket.Unturned.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SDG.NetPak.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.Unturned.Redist.3.23.3.1\lib\net461\SDG.NetPak.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="SDG.NetTransport, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.Unturned.Redist.3.23.3.1\lib\net461\SDG.NetTransport.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SystemEx, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.Unturned.Redist.3.23.3.1\lib\net461\SystemEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.AccessibilityModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.AIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.AndroidJNIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.AnimationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ARModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.AssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.AudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ClothModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ClusterInputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ClusterRendererModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashLog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.CrashLog.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.CrashReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.DirectorModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.DSPGraphModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.GameCenterModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.GIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.GridModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.HotReloadModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ImageConversionModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.InputLegacyModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.InputModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.JSONSerializeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.LocalizationModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ParticleSystemModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.PerformanceReportingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.Physics2DModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.PhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ProfilerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.ScreenCaptureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.SharedInternalsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.SpriteMaskModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.SpriteShapeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.StreamingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.SubstanceModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.SubsystemsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.TerrainModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.TextCoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.TextRenderingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.TilemapModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.TLSModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UIElementsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsNativeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UIElementsNativeModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UmbraModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UNETModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UNETModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityConnectModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityCurlModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityWebRequestModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.VehiclesModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.VFXModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.VideoModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VirtualTexturingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.VirtualTexturingModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.VRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.WindModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.UnityEngine.Redist.2020.3.38\lib\net461\UnityEngine.XRModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEx, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\OpenMod.Unturned.Redist.3.23.3.1\lib\net461\UnityEx.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\EffectTrailer.cs" />
+    <Compile Include="Behaviors\FireworkBehaviour.cs" />
+    <Compile Include="Commands\AlertZombiesCommand.cs" />
+    <Compile Include="Commands\BoomCommand.cs" />
+    <Compile Include="Behaviors\FiremodeUnlocker.cs" />
+    <Compile Include="Behaviors\NoDrainBehaviour.cs" />
+    <Compile Include="Behaviors\PointToolInputListener.cs" />
+    <Compile Include="Behaviors\RepeatCommandQueue.cs" />
+    <Compile Include="Behaviors\SeeInventoryBehaviour.cs" />
+    <Compile Include="Behaviors\StructureESPBehaviour.cs" />
+    <Compile Include="Behaviors\UnlimitedAmmoBehaviour.cs" />
+    <Compile Include="Commands\AFlyCommand.cs" />
+    <Compile Include="Commands\AFlySpeedPermitCommand.cs" />
+    <Compile Include="Commands\AscendCommand.cs" />
+    <Compile Include="Commands\CheckOwnerCommand.cs" />
+    <Compile Include="Commands\ClearInventoryCommand.cs" />
+    <Compile Include="Commands\CommandSpyCommand.cs" />
+    <Compile Include="Commands\DescendCommand.cs" />
+    <Compile Include="Commands\ForceEquipCommand.cs" />
+    <Compile Include="Commands\ReviveResourcesCommand.cs" />
+    <Compile Include="Commands\DestroyResourcesCommand.cs" />
+    <Compile Include="Commands\DisableVehicleAccess.cs" />
+    <Compile Include="Commands\AFlySpeedCommands.cs" />
+    <Compile Include="Commands\ExecAllCommand.cs" />
+    <Compile Include="Commands\ExecCommand.cs" />
+    <Compile Include="Commands\FindBaseCommand.cs" />
+    <Compile Include="Commands\FireworkCommand.cs" />
+    <Compile Include="Commands\ForceDemountCommand.cs" />
+    <Compile Include="Commands\ForceSaveCommand.cs" />
+    <Compile Include="Commands\ForceTPCommand.cs" />
+    <Compile Include="Commands\GotoBedCommand.cs" />
+    <Compile Include="Commands\GotoMarker.cs" />
+    <Compile Include="Commands\JumpHeightCommand.cs" />
+    <Compile Include="Commands\KickAllCommand.cs" />
+    <Compile Include="Commands\LaunchBushesCommand.cs" />
+    <Compile Include="Commands\MapJumpCommand.cs" />
+    <Compile Include="Commands\MarkerCommand.cs" />
+    <Compile Include="Commands\NoClipCommand.cs" />
+    <Compile Include="Commands\NoDrainCommand.cs" />
+    <Compile Include="Commands\PlaceObjectCommand.cs" />
+    <Compile Include="Commands\PointToolCommand.cs" />
+    <Compile Include="Commands\RepeatCommand.cs" />
+    <Compile Include="Commands\SalvageTimeCommand.cs" />
+    <Compile Include="Commands\SATCommand.cs" />
+    <Compile Include="Commands\SeeInventoryCommand.cs" />
+    <Compile Include="Commands\SetAttachmentCommand.cs" />
+    <Compile Include="Commands\SetFiremodeCommand.cs" />
+    <Compile Include="Commands\SetGravityCommand.cs" />
+    <Compile Include="Commands\SetServerGravity.cs" />
+    <Compile Include="Commands\SetServerJump.cs" />
+    <Compile Include="Commands\SetServerSpeed.cs" />
+    <Compile Include="Commands\SetSpeedCommand.cs" />
+    <Compile Include="Commands\SimFireCommand.cs" />
+    <Compile Include="Commands\StructureESPCommand.cs" />
+    <Compile Include="Commands\TrailCommand.cs" />
+    <Compile Include="Commands\TTCommand.cs" />
+    <Compile Include="Commands\UnlimitedAmmoCommand.cs" />
+    <Compile Include="Commands\UnlockCommand.cs" />
+    <Compile Include="Commands\UnlockFireModesCommand.cs" />
+    <Compile Include="Commands\WipePlayerBuildingsCommand.cs" />
+    <Compile Include="Commands\WreckCommand.cs" />
+    <Compile Include="Components\Extensions.cs" />
+    <Compile Include="Components\Helpers.cs" />
+    <Compile Include="Components\INIFile.cs" />
+    <Compile Include="Components\UpdaterCore.cs" />
+    <Compile Include="AdminToolsPlugin.cs" />
+    <Compile Include="Behaviors\FlightSession.cs" />
+    <Compile Include="Behaviors\MapJumpingSession.cs" />
+    <Compile Include="Models\EXECPassthroughPermissionsManager.cs" />
+    <Compile Include="Models\FieldAccessor.cs" />
+    <Compile Include="Models\PlayerData.cs" />
+    <Compile Include="Models\PlayerSession.cs" />
+    <Compile Include="Models\PluginConfig.cs" />
+    <Compile Include="Models\PointToolMode.cs" />
+    <Compile Include="Models\RaycastResult.cs" />
+    <Compile Include="Models\ReflectionExtensions.cs" />
+    <Compile Include="Models\StructureCluster.cs" />
+    <Compile Include="Models\UnturnedKey.cs" />
+    <Compile Include="Modules\execManager.cs" />
+    <Compile Include="Modules\NoClippingTool.cs" />
+    <Compile Include="Modules\PlayerDataStore.cs" />
+    <Compile Include="Modules\PlayerSelector.cs" />
+    <Compile Include="Modules\PlayerSessionStore.cs" />
+    <Compile Include="Modules\PlayerUtil.cs" />
+    <Compile Include="Modules\PointToolManager.cs" />
+    <Compile Include="Modules\RaycastUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="GlobalConfig.ini" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

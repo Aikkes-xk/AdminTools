@@ -41,46 +41,51 @@ namespace ShimmysAdminTools
         public IRocketCommand ExecAllCommandRedirect { get; private set; } = null;
         public override void LoadPlugin()
         {
-            Logger.Log($"Loading ShimmysAdminTools v{UpdaterCore.CurrentVersion} by ShimmyMySherbet");
-            base.LoadPlugin();
-            Instance = this;
-            Config = Configuration.Instance;
-            PlayerDataStore.Init();
-            PlayerSessionStore.Init();
+            /// <summary>
+            /// 加载ShimmysAdminTools插件并初始化相关组件和事件监听器。
+            /// </summary>
+            Logger.Log($"加载 ShimmysAdminTools v{UpdaterCore.CurrentVersion} 作者 ShimmyMySherbet"); // 记录插件加载信息
+            base.LoadPlugin(); // 调用基类的加载插件方法
+            Instance = this; // 设置插件实例
+            Config = Configuration.Instance; // 获取配置实例
+            PlayerDataStore.Init(); // 初始化玩家数据存储
+            PlayerSessionStore.Init(); // 初始化玩家会话存储
+
+            // 绑定各种事件监听器
             U.Events.OnBeforePlayerConnected += Events_OnBeforePlayerConnected;
             U.Events.OnPlayerConnected += Events_OnPlayerConnected;
             U.Events.OnPlayerDisconnected += Events_OnPlayerDisconnected;
             VehicleManager.onEnterVehicleRequested += VehicleManager_onEnterVehicleRequested;
             Rocket.Unturned.Events.UnturnedPlayerEvents.OnPlayerUpdateGesture += UnturnedPlayerEvents_OnPlayerUpdateGesture;
-
             ChatManager.onCheckPermissions += Chat_OnCheckPermissions;
 
-            LoadCurrentPlayers();
+            LoadCurrentPlayers(); // 加载当前玩家
 
-            Level.onLevelLoaded += OnLevelloaded;
+            Level.onLevelLoaded += OnLevelloaded; // 绑定关卡加载完成事件
 
-            Logger.Log("Checking for updates...");
+            // 检查更新
+            Logger.Log("检查更新...");
             UpdaterCore.Init();
-
             if (UpdaterCore.IsOutDated)
             {
-                Logger.LogWarning("ShimmysAdminTools is out of date!");
-                Logger.Log($"Latest Version: v{UpdaterCore.LatestVersion}");
+                Logger.LogWarning("ShimmysAdminTools 已过期！");
+                Logger.Log($"最新版本: v{UpdaterCore.LatestVersion}");
                 if (UpdaterCore.TryGetUpdateMessage(out string msg))
                 {
-                    Logger.Log($"Update Notes:");
+                    Logger.Log($"更新说明:");
                     Logger.Log(msg);
                 }
-                Logger.Log("Download the latest update at https://github.com/ShimmyMySherbet/ShimmysAdminTools");
+                Logger.Log("在 https://github.com/ShimmyMySherbet/ShimmysAdminTools 下载最新更新");
             }
 
-            gameObject.AddComponent<RepeatCommandQueue>();
+            gameObject.AddComponent<RepeatCommandQueue>(); // 添加重复命令队列组件
 
+            // 根据配置决定是否激活执行模块
             if (Config.ExecEnabled)
             {
                 if (ExecPluginPresent)
                 {
-                    Logger.Log("Detected ExecPlugin. Skipping load of exec module.");
+                    Logger.Log("检测到 ExecPlugin，跳过执行模块加载。");
                 }
                 else if (!Config.DelayStartEXECUtility)
                 {
@@ -88,10 +93,9 @@ namespace ShimmysAdminTools
                 }
             }
 
-            Logger.Log("ShimmysAdminTools loaded.");
+            Logger.Log("ShimmysAdminTools 加载完成。");
         }
-
-        private void Events_OnPlayerConnected(UnturnedPlayer player)
+            private void Events_OnPlayerConnected(UnturnedPlayer player)
         {
             lock (NamesCache)
             {

@@ -13,16 +13,16 @@ using Logger = Rocket.Core.Logging.Logger;
 
 namespace ShimmysAdminTools.Modules
 {
-	/// <summary>
-	/// Delegate representing a PointTool interaction event
-	/// </summary>
-	/// <param name="tool">The name of the tool used</param>
-	/// <param name="actor">The actor of the tool</param>
-	/// <param name="point">The location the tool is triggered</param>
-	/// <param name="target">The target object type</param>
-	/// <param name="targetHandle">A handle of the target, or more info on the target</param>
-	/// <param name="denied">When true, the interaction was denied due to missing permissions</param>
-	public delegate void PointToolInteractionEvent(string tool, UnturnedPlayer actor, Vector3 point, string target, string targetHandle, bool denied);
+    /// <summary>
+    /// 委托表示PointTool交互事件
+    /// </summary>
+    /// <param name="tool">使用的工具名称</param>
+    /// <param name="actor">工具的执行者</param>
+    /// <param name="point">触发工具的位置</param>
+    /// <param name="target">目标对象类型</param>
+    /// <param name="targetHandle">目标的句柄，或关于目标的更多信息</param>
+    /// <param name="denied">当为true时，表示由于缺少权限而拒绝了交互</param>
+    public delegate void PointToolInteractionEvent(string tool, UnturnedPlayer actor, Vector3 point, string target, string targetHandle, bool denied);
 
 	public static class PointToolManager
 	{
